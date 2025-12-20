@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>История заказов</title>
+  <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+
+<header>
+    <h1>Food:Fast&Hot</h1>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="order.html">Собрать ланч</a>
+    <a href="orders.html" class="active">Заказы</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+</header>
+
+<main class="container">
+        <h1>История заказов</h1>
+        <div class="orders-table-container">
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Дата оформления</th>
+                        <th>Состав заказа</th>
+                        <th>Стоимость</th>
+                        <th>Время доставки</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="orderlist-container">
+                    <tr>
+                        <td colspan="6" class="loading">Загрузка заказов...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="no-orderlist" class="no-orderlist" style="display: none;">
+            <p>У вас пока нет оформленных заказов.</p>
+            <a href="index.html" class="btn-primary">Собрать ланч</a>
+        </div>
+    </main>
+
+    <div id="details-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Просмотр заказа</h2>
+            <div class="modal-body">
+                <div class="order-info-section">
+                    <h3>Дата оформления</h3>
+                    <p id="detail-order-date" class="order-date-big">23.11.2024 20:01</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Доставка</span>
+                            <span id="detail-delivery-type" class="info-value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Имя получателя</span>
+                            <span id="detail-full-name" class="info-value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Адрес доставки</span>
+                            <span id="detail-address" class="info-value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Время доставки</span>
+                            <span id="detail-delivery-time" class="info-value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Телефон</span>
+                            <span id="detail-phone" class="info-value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email</span>
+                            <span id="detail-email" class="info-value"></span>
+                        </div>
+                    </div>
+                    
+                    <h3>Комментарий</h3>
+                    <p id="detail-comment" class="comment">Пожалуйста, от поста охраны.</p>
+                </div>
+                
+                <div class="order-dishes-section">
+                    <h3>Состав заказа</h3>
+                    <ul id="detail-dishes-list" class="dishes-list">
+                    </ul>
+                </div>
+                
+                <div class="order-total-section">
+                    <h3>Стоимость: <span id="detail-total-price">0</span> ₽</h3>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary close-modal">Ок</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Редактирование заказа</h2>
+            <div class="modal-body">
+                <div class="order-info-section">
+                    <h3>Дата оформления</h3>
+                    <p id="edit-order-date" class="order-date-big"></p>
+                    
+                    <form id="edit-form">
+                        <input type="hidden" id="edit-order-id">
+                        
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Доставка</span>
+                                <span class="info-value">
+                                    <select id="edit-delivery-type" class="form-control">
+                                        <option value="now">Как можно скорее</option>
+                                        <option value="by_time">Ко времени</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Имя получателя</span>
+                                <span class="info-value">
+                                    <input type="text" id="edit-full-name" class="form-control" required>
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Адрес доставки</span>
+                                <span class="info-value">
+                                    <input type="text" id="edit-address" class="form-control" required>
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Тип доставки</span>
+                                <span class="info-value">
+                                    <select id="edit-delivery-type-select" class="form-control">
+                                        <option value="now">Как можно скорее</option>
+                                        <option value="by_time">Ко времени</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="info-item" id="edit-time-group" style="display: none;">
+                                <span class="info-label">Время доставки</span>
+                                <span class="info-value">
+                                    <input type="time" id="edit-delivery-time" class="form-control" min="07:00" max="23:00" step="300">
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Телефон</span>
+                                <span class="info-value">
+                                    <input type="tel" id="edit-phone" class="form-control" required>
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Email</span>
+                                <span class="info-value">
+                                    <input type="email" id="edit-email" class="form-control" required>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <h3>Комментарий</h3>
+                        <textarea id="edit-comment" class="form-control comment-textarea" rows="3"></textarea>
+                        
+                        <div class="order-dishes-section">
+                            <h3>Состав заказа</h3>
+                            <ul id="edit-dishes-list" class="dishes-list">
+                            </ul>
+                        </div>
+                        
+                        <div class="order-total-section">
+                            <h3>Стоимость: <span id="edit-total-price">0</span> ₽</h3>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="edit-form" class="btn-primary">Сохранить</button>
+                <button type="button" class="btn-secondary close-modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="delete-modal" class="modal" style="display: none;">
+        <div class="modal-content delete-modal">
+            <span class="close">&times;</span>
+            <h2>Удаление заказа</h2>
+            <div class="modal-body">
+                <p>Вы уверены, что хотите удалить этот заказ?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-delete" class="btn-danger">Да</button>
+                <button class="btn-secondary close-modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+<footer id="contacts">
+    <p>Позвонить нам <a href="tel:+78005553535">+7-800-555-35-35</a></p>
+    <p>© Куманяев Никита 241-351</p>
+  </footer>
+
+<script src="orderlist.js"></script>
+</body>
+</html>

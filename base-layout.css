@@ -1,0 +1,119 @@
+/* === БАЗОВЫЕ И ЛЕЙАУТ СТИЛИ === */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Chiron GoRound TC", sans-serif;
+  font-size: 16px;
+  color: #2c2c2c;
+  line-height: 1.6;
+  background: linear-gradient(to bottom right, #f7fff7, #e9f7ef);
+}
+
+main {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #2d6a4f;
+  border-left: 6px solid #52b788;
+  padding-left: 10px;
+}
+
+img {
+  width: 70%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  background: #d8f3dc;
+  margin: 8px 0;
+  padding: 12px 15px;
+  border-radius: 10px;
+}
+
+ul li:hover {
+  background: #b7e4c7;
+}
+
+header {
+  padding: 25px 20px;
+  background: linear-gradient(to right, #d4fc79, #96e6a1);
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #2d6a4f;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #1b4332;
+}
+
+nav a.active {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #40916c;
+}
+
+.login-link {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.login-link a {
+  font-size: 18px;
+  color: #1b4332;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  color: #40916c;
+}
+
+footer {
+  padding: 20px;
+  background-color: #1b4332;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer a {
+  color: #52b788;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
