@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Оформить заказ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Food:Fast&Hot</h1>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="order.html">Собрать ланч</a>
+      <a href="makeorder.html?checkout" class="active" >Оформить заказ</a>
+	  <a href="orderlist.html">Собрать ланч</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main class="order-page">
+    
+  
+    <h2>Состав заказа</h2>
+
+    <section class="order-items-section">
+      <div id="order-items" class="dish"> </div>
+    </section>
+
+  <section class="order-section">
+    <h2>Сделать заказ</h2>
+
+    <form id="order-form" class="order-form">
+
+      <div class="form-block">
+        <h3>Ваш заказ</h3>
+
+        <p>Суп: <span id="order-soup">Блюдо не выбрано</span></p>
+        <p>Основное блюдо: <span id="order-main">Блюдо не выбрано</span></p>
+        <p>Салат и стартер: <span id="order-salad">Блюдо не выбрано</span></p>
+        <p>Десерт: <span id="order-dessert">Блюдо не выбрано</span></p>
+        <p>Напиток: <span id="order-drink">Напиток не выбран</span></p>
+
+        <p id="order-total" style="font-weight:bold; margin-top:10px; display:none;"></p>
+
+
+        <input type="hidden" name="soup" id="input-soup">
+        <input type="hidden" name="main" id="input-main">
+        <input type="hidden" name="drink" id="input-drink">
+
+        <label for="comment">Комментарии к заказу</label>
+        <textarea id="comment" name="comment" rows="4"></textarea>
+      </div>
+
+      <div class="form-block">
+        <h3>Ваши данные</h3>
+
+        <label for="name">Имя</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Номер телефона</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="address">Адрес доставки</label>
+        <input type="text" id="address" name="address" required>
+        <p class="hint">Доставка осуществляется только по Москве</p>
+
+        <fieldset>
+          <legend>Время доставки:</legend>
+          <label><input type="radio" name="delivery" value="asap" required> Как можно скорее</label>
+          <label><input type="radio" name="delivery" value="time"> К указанному времени</label>
+        </fieldset>
+
+        <label for="time">Укажите время доставки</label>
+        <input type="time" id="time" name="time" min="07:00" max="23:00" step="300">
+
+        <div class="form-buttons">
+          <button type="reset">Сбросить</button>
+          <button type="submit">Отправить</button>
+        </div>
+
+      </div>
+    </form>
+  </section>
+  </main>
+
+  <footer id="contacts">
+    <p>Позвонить нам <a href="tel:+78005553535">+7-800-555-35-35</a></p>
+    <p>© Куманяев Никита</p>
+  </footer>
+
+  <script src="order.js"></script>
+</body>
+</html>

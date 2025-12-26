@@ -1,0 +1,46 @@
+/* === УТИЛИТЫ === */
+
+.price { font-weight: bold; }
+
+.hint { font-size: 14px; color: #555; }
+
+.alert-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.alert-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.alert-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.alert-content button {
+  padding: 10px 20px;
+  background: #ffd5b5;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.alert-content button:hover {
+  background: #ff944d;
+  color: white;
+}

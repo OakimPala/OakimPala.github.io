@@ -1,0 +1,7 @@
+/* === СТИЛИ ДЛЯ ПЕЧАТИ === */
+
+@media print {
+  header, footer, nav { display: none; }
+  body { background: white; color: black; font-size: 12pt; }
+  img { max-width: 100%; height: auto; }
+}

@@ -1,0 +1,236 @@
+/* === ФОРМЫ === */
+
+.feedback-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Вертикальные метки */
+.feedback-form label.stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 16px;
+  color: #1b4332;
+  margin-bottom: 12px;
+}
+
+.feedback-form label.stacked input,
+.feedback-form label.stacked textarea,
+.feedback-form label.stacked select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #b7e4c7;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.feedback-form label.inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-right: 12px;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.feedback-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 8px 0 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.order-section {
+  margin: 60px auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.order-form {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.form-block {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-block h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #2d6a4f;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.hint {
+  font-size: 14px;
+  color: #555;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  font-family: "Chiron GoRound TC", sans-serif;
+  background-color: #2d6a4f;
+  color: white;
+}
+
+button[type="reset"] {
+  font-family: "Chiron GoRound TC", sans-serif;
+  background-color: #ccc;
+}
+
+/* чекбоксы/радио */
+.feedback-form input[type="checkbox"],
+.feedback-form input[type="radio"],
+.order-form input[type="checkbox"],
+.order-form input[type="radio"],
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #2d6a4f;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.feedback-form input[type="radio"],
+.order-form input[type="radio"],
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+/* checked */
+.feedback-form input[type="checkbox"]:checked,
+.order-form input[type="checkbox"]:checked,
+input[type="checkbox"]:checked {
+  background: #2d6a4f;
+  border-color: #2d6a4f;
+}
+
+.feedback-form input[type="radio"]:checked,
+.order-form input[type="radio"]:checked,
+input[type="radio"]:checked {
+  background: #2d6a4f;
+  border-color: #2d6a4f;
+}
+
+.feedback-form label.inline input[type="checkbox"],
+.feedback-form label.inline input[type="radio"] {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 800px) {
+  nav a {
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .drink {
+    grid-template-columns: repeat(2, 1fr);
+    width: 78%;
+    gap: 12px;
+  }
+
+  .drink-card img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .dishes-table th,
+  .dishes-table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  
+  nav a {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    font-size: 20px;
+    padding: 8px 10px;
+  }
+
+  
+  .drink {
+    grid-template-columns: 1fr;
+    width: 80%;
+    gap: 14px;
+  }
+
+  .drink-card {
+    padding: 20px;
+  }
+
+  .drink-card img {
+    width: 530px;
+    height: 530px;
+    object-fit: cover;
+  }
+
+  .order-form {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .order-section {
+    padding: 16px;
+  }
+
+  main {
+    padding: 18px 12px;
+  }
+
+
+  footer {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
+
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+  border-color: #44b557;
+}
