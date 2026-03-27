@@ -1,155 +1,184 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* -------- Общие стили -------- */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body {
-  font-family: 'Pacifico', cursive;
-  font-size: 16px;
-  color: #2c2c2c;
-  line-height: 1.6;
-  background: linear-gradient(to bottom right, #f7fff7, #e9f7ef);
+body{
+font-family: "Segoe UI", Arial, sans-serif;
+background: linear-gradient(135deg,#eef2f7,#d9e2ec);
+color:#333;
+
+display:flex;
+flex-direction:column;
+min-height:100vh;
 }
 
-header {
-  padding: 25px 20px;
-  background: linear-gradient(to right, #d4fc79, #96e6a1);
-  text-align: center;
-  
+/* -------- Верхнее меню -------- */
+
+#main_menu{
+display:flex;
+justify-content:center;
+gap:15px;
+
+background:#1e293b;
+padding:15px;
+
+box-shadow:0 2px 10px rgba(0,0,0,0.2);
 }
 
-header h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-  color: #2d6a4f;
+#main_menu a{
+color:white;
+text-decoration:none;
+padding:10px 20px;
+border-radius:8px;
+background:#334155;
+
+transition:0.3s;
 }
 
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #1b4332;
-  
+#main_menu a:hover{
+background:#475569;
+transform:translateY(-2px);
 }
 
-nav a:hover {
-  color: #40916c;
-  
+/* активная кнопка */
+.selected{
+background:#3b82f6 !important;
 }
 
-main {
-  padding: 30px 20px;
-  max-width: 1200px;
-  margin: auto;
+/* -------- Основной контейнер -------- */
+
+#container{
+flex:1;
+
+display:flex;
+max-width:1200px;
+margin:20px auto;
+gap:20px;
+width:95%;
 }
 
-section {
-  margin-bottom: 60px;
+/* -------- Боковое меню -------- */
+
+#side_menu{
+width:160px;
+background:white;
+
+padding:15px;
+border-radius:10px;
+
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
-h2 {
-  font-size: 26px;
-  margin-bottom: 20px;
-  color: #2d6a4f;
-  border-left: 6px solid #52b788;
-  padding-left: 10px;
-  align-items: center;
-  gap: 8px;
+#side_menu a{
+display:block;
+
+padding:10px;
+margin-bottom:8px;
+
+text-decoration:none;
+color:#333;
+
+border-radius:6px;
+transition:0.25s;
 }
 
-h2 i {
-  color: #40915d;
+#side_menu a:hover{
+background:#e2e8f0;
 }
 
-img {
-  width: 70%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 20px;
+#side_menu .selected{
+background:#3b82f6;
+color:white;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
+/* -------- Область таблицы -------- */
+
+#table_area{
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-ul li {
-  background: #d8f3dc;
-  margin: 8px 0;
-  padding: 12px 15px;
-  border-radius: 10px;
-  align-items: center;
-  gap: 10px;
+/* -------- Табличная верстка -------- */
+
+.multTable {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-ul li i {
-  color: #ffffff;
+.multTable td {
+    padding: 12px;
+    vertical-align: top;
+    text-align: left;
 }
 
-ul li:hover {
-  background: #b7e4c7;
+/* Горизонтальные разделители между строками умножения ТОЛЬКО в табличной верстке */
+.multTable .mult-row {
+    padding: 6px 0;
+    border-bottom: 1px solid black;
 }
 
-
-.dishes-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #fff;
+.multTable .mult-row:last-child {
+    border-bottom: none;
 }
 
-.dishes-table th,
-.dishes-table td {
-  padding: 1.2rem;
-  text-align: left;
-  border-bottom: 1px solid #e8f5e8;
+/* -------- Блочная верстка -------- */
+
+.ttRow{
+display:inline-block;
+
+margin:10px;
+padding:12px;
+
+border-radius:10px;
+
+background:#f8fafc;
+border:1px solid #e2e8f0;
+
+box-shadow:0 3px 8px rgba(0,0,0,0.08);
 }
 
-.dishes-table th {
-  background: #2d6a4f;
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
+.ttSingleRow{
+font-size:22px;
+
+padding:20px;
+border-radius:12px;
+
+background:#f1f5f9;
+border:2px solid #3b82f6;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.dishes-table tr:nth-child(even) {
-  background-color: #f8fff8;
+/* -------- Ссылки внутри таблицы -------- */
+
+#table_area a{
+color:#2563eb;
+text-decoration:none;
+font-weight:600;
 }
 
-.dishes-table tr:hover {
-  background-color: #e8f5e8;
+#table_area a:hover{
+text-decoration:underline;
 }
 
-.dishes-table td:first-child {
-  font-weight: bold;
-  color: #1b4332;
+/* -------- Футер -------- */
+
+#footer{
+background:#1e293b;
+color:#e2e8f0;
+
+text-align:center;
+padding:15px;
+
+margin-top:auto;
+
+font-size:14px;
+box-shadow:0 -2px 10px rgba(0,0,0,0.2);
 }
-
-.price {
-  color: #2d6a4f;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-
-
-footer {
-  padding: 20px;
-  background-color: #1b4332;
-  color: white;
-  text-align: center;
-  margin-top: 50px;
-}
-
-footer a {
-  color: #52b788;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
