@@ -1,155 +1,135 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Pacifico', cursive;
-  font-size: 16px;
-  color: #2c2c2c;
-  line-height: 1.6;
-  background: linear-gradient(to bottom right, #f7fff7, #e9f7ef);
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
 }
 
-header {
-  padding: 25px 20px;
-  background: linear-gradient(to right, #d4fc79, #96e6a1);
-  text-align: center;
-  
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
 }
 
-header h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-  color: #2d6a4f;
+h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
 }
 
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #1b4332;
-  
+.subtitle {
+  margin: 0 0 24px;
+  color: #5b6472;
 }
 
-nav a:hover {
-  color: #40916c;
-  
-}
-
-main {
-  padding: 30px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-section {
-  margin-bottom: 60px;
-}
-
-h2 {
-  font-size: 26px;
-  margin-bottom: 20px;
-  color: #2d6a4f;
-  border-left: 6px solid #52b788;
-  padding-left: 10px;
-  align-items: center;
-  gap: 8px;
-}
-
-h2 i {
-  color: #40915d;
-}
-
-img {
-  width: 70%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul li {
-  background: #d8f3dc;
-  margin: 8px 0;
-  padding: 12px 15px;
-  border-radius: 10px;
-  align-items: center;
-  gap: 10px;
-}
-
-ul li i {
-  color: #ffffff;
-}
-
-ul li:hover {
-  background: #b7e4c7;
-}
-
-
-.dishes-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
+.card {
+  background: #fff;
+  border: 1px solid #d7deea;
   border-radius: 14px;
-  overflow: hidden;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+textarea {
+  width: 100%;
+  min-height: 220px;
+  resize: vertical;
+  border: 1px solid #c8d2e0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 16px;
+  line-height: 1.5;
+  outline: none;
   background: #fff;
 }
 
-.dishes-table th,
-.dishes-table td {
-  padding: 1.2rem;
-  text-align: left;
-  border-bottom: 1px solid #e8f5e8;
+textarea:focus {
+  border-color: #6b8cff;
+  box-shadow: 0 0 0 3px rgba(107, 140, 255, 0.15);
 }
 
-.dishes-table th {
-  background: #2d6a4f;
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
-}
-
-.dishes-table tr:nth-child(even) {
-  background-color: #f8fff8;
-}
-
-.dishes-table tr:hover {
-  background-color: #e8f5e8;
-}
-
-.dishes-table td:first-child {
-  font-weight: bold;
-  color: #1b4332;
-}
-
-.price {
-  color: #2d6a4f;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-
-
-footer {
-  padding: 20px;
-  background-color: #1b4332;
-  color: white;
-  text-align: center;
-  margin-top: 50px;
-}
-
-footer a {
-  color: #52b788;
+button, .btn-link {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #2f6fed;
+  color: #fff;
   text-decoration: none;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-footer a:hover {
-  text-decoration: underline;
+button:hover, .btn-link:hover {
+  background: #2458bd;
 }
 
+.result-block {
+  background: #fff;
+  border: 1px solid #d7deea;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  margin-bottom: 18px;
+}
+
+.src_text {
+  padding: 14px;
+  border-left: 4px solid #2f6fed;
+  background: #f8fbff;
+  color: #1d4ed8;
+  font-style: italic;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.src_error {
+  padding: 14px;
+  border-left: 4px solid #dc2626;
+  background: #fff5f5;
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+  background: #fff;
+}
+
+th, td {
+  border: 1px solid #aeb9c9;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #eef3fb;
+}
+
+.section-title {
+  margin: 24px 0 10px;
+  font-size: 22px;
+}
+
+.small-note {
+  color: #667085;
+  margin-top: 8px;
+  font-size: 14px;
+}
